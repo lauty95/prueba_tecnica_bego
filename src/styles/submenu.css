@@ -1,0 +1,41 @@
+.submenuTitulo {
+    height: 24px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.submenuTitulo h1 {
+    color: #FFBE00;
+    font-size: 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.submenu {
+    height: 24px;
+    margin: 25px 0px 0px 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.submenu li {
+    padding-right: 8px;
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 26px;
+    float: left;
+    cursor: pointer;
+}
+
+.submenu li:hover {
+    color: #FFBE00;
+    border-bottom: 2px solid #FFBE00;
+    transition-duration: 1s;
+}
+
+.submenu .active {
+    color: #FFBE00;
+    border-bottom: 2px solid #FFBE00;
+    transition-duration: 1s;
+}

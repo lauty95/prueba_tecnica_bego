@@ -1,0 +1,16 @@
+.navbar{
+    height: 107px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar img {
+    width: 22px;
+    height: 24px;
+}
+
+.navbar h1 {
+    line-height: 26px;
+    font-size: 18px;
+}

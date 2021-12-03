@@ -1,0 +1,96 @@
+.statick {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.statick h1 {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.statick .boton {
+    width: 53px;
+    height: 24px;
+    border: 1px solid #1C232A;
+    box-shadow: 2px 2px 4px 0px #040B11 inset, 2px 2px 4px 0px #1C232A inset;
+    border-radius: 4px;
+    display: flex;
+}
+
+.statick .botonDescargaIzq {
+    border-right: 3px solid #1C232A;
+    display: flex;
+    width: 33px;
+    align-items: center;
+    justify-content: center;
+}
+
+.statick .botonDescargaDer {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statick .botonDescargaDer img {
+    width: 8px;
+    height: 6px;
+}
+
+.details {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px 0px #1C232A inset, -2px -2px 4px 0px #040B11 inset, 0px 13px 9px 0px black ;
+    background-color: #10161C;
+}
+
+.details h1 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.details h2 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 19px;
+    color: #C1C7D0;
+}
+
+.details .seccion-details {
+    display: flex;
+    height: 69px;
+    width: 49%;
+    align-items: center;
+}
+
+.details .seccion-details .logotipo {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.details .up-left {
+    border-bottom: 1px solid #1C232A;
+    border-right: 1px solid #1C232A;
+}
+
+.details .up-right {
+    border-bottom: 1px solid #1C232A;
+    border-left: 1px solid #1C232A;
+    ;
+}
+
+.details .down-left {
+    border-right: 1px solid #1C232A;
+}
+
+.details .down-right {
+    border-left: 1px solid #1C232A;
+}
