@@ -41,6 +41,7 @@ li .active {
     width: 169px;
     height: 61px;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .valor h3 {
@@ -51,6 +52,7 @@ li .active {
     font-size: 22px;
     letter-spacing: 0;
     line-height: 26px;
+    margin: 0;
 }
 
 .valor h1 {
@@ -61,4 +63,5 @@ li .active {
     letter-spacing: 0;
     line-height: 61px;
     text-align: center;
+    margin: 0;
 }

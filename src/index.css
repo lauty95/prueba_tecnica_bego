@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: 'Avenir Heavy';
-  background-color: rgb(4, 11, 17);
+  background-color: #040B11;
   color: white;
 }
 
 .App {
-  width: 313px;
+  width: 326px;
   margin-left: auto;
   margin-right: auto;
 }
