@@ -1,3 +1,4 @@
+import Footer from './components/Footer.jsx';
 import Graphic from './components/Graphic.jsx';
 import Nav from './components/Nav.jsx'
 import Statics from './components/Statics.jsx';
@@ -12,6 +13,7 @@ function App() {
       <Tasks />
       <Statics />
       <Graphic />
+      <Footer />
     </div>
   );
 }
