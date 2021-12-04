@@ -4,35 +4,89 @@ import { Line } from 'react-chartjs-2'
 
 function Graphic() {
 
-    const data = (canvas) => {
+    const month = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov']
+    const values = [12, 15, 10, 18, 15, 20]
 
-        const degrade = ({ gradient, a, b, c, d }) => {
-            const ctx = canvas.getContext("2d");
-            gradient = ctx.createLinearGradient(a, b, c, d);
-            gradient.addColorStop(0, '#594200');
-            gradient.addColorStop(0.6, '#040B11');
-            gradient.addColorStop(1, '#10161C');
-            return gradient
+    const tooltipLine = {
+        id: 'tooltipLine',
+        afterDraw: chart => {
+            if (chart.tooltip._active && chart.tooltip._active.length) {
+                const ctx = chart.ctx;
+                ctx.save();
+                const activePoint = chart.tooltip._active[0];
+                ctx.beginPath();
+                ctx.moveTo(activePoint.tooltipPosition().x, activePoint.tooltipPosition().y);
+                ctx.lineTo(activePoint.tooltipPosition().x, chart.chartArea.bottom);
+                ctx.lineWidth = '0.1em';
+                ctx.strokeStyle = 'white';
+                ctx.stroke();
+                ctx.restore()
+            }
         }
+    }
+
+    const data = (canvas) => {
+        const ctx = canvas.getContext("2d");
+        const gradient = ctx.createLinearGradient(0, 0, 0, 200);
+        gradient.addColorStop(0, '#594200');
+        gradient.addColorStop(0.6, '#10161C');
+        gradient.addColorStop(1, '#10161C');
 
         return {
-            labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
+            labels: month,
             datasets: [{
-                data: [12, 15, 10, 18, 15, 20],
-                fill: 'start',
-                backgroundColor: [
-                    degrade({ gradient: '', a: 0, b: 0, c: 0, d: 100 }),
-                    degrade({ gradient: '', a: 0, b: 0, c: 0, d: 80 }),
-                    degrade({ gradient: '', a: 0, b: 0, c: 0, d: 120 }),
-                    degrade({ gradient: '', a: 0, b: 0, c: 0, d: 50 }),
-                    degrade({ gradient: '', a: 0, b: 0, c: 0, d: 100 }),
-                    degrade({ gradient: '', a: 0, b: 0, c: 0, d: 180 }),
-                    degrade({ gradient: '', a: 0, b: 0, c: 0, d: 100 }),
-                ],
+                data: values,
+                stroke: 'start',
+                backgroundColor: gradient,
                 borderColor: '#FFBE00',
                 borderWidth: 1
             }]
         }
+    }
+
+    const options = {
+        elements: {
+            point: {
+                radius: 0
+            }
+        },
+        legend: {
+            display: false
+        },
+        maintainAspectRatio: false,
+        scales: {
+            yAxes: [
+                {
+                    gridLines: {
+                        drawBorder: true,
+                        display: false
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        display: false
+                    }
+                }
+            ],
+            xAxes: [{
+                gridLines: {
+                    drawBorder: true,
+                    display: false
+                }
+            }]
+        },
+        tooltips: {
+            xPadding: 20,
+            yPadding: 10,
+            displayColors: false,
+            bodyFontSize: 16,
+            bodyFontStyle: 'bold',
+            mode: 'index',
+            intersect: false
+        },
+        hover: {
+            mode: 'index',
+            intersect: false
+        },
     }
 
     return (
@@ -52,39 +106,8 @@ function Graphic() {
                     data={data}
                     height={200}
                     width={200}
-                    options={
-                        {
-                            elements: {
-                                point: {
-                                    radius: 0
-                                }
-                            },
-                            legend: {
-                                display: false
-                            },
-                            maintainAspectRatio: false,
-                            scales: {
-                                yAxes: [
-                                    {
-                                        gridLines: {
-                                            drawBorder: true,
-                                            display: false
-                                        },
-                                        ticks: {
-                                            beginAtZero: true,
-                                            display: false
-                                        }
-                                    }
-                                ],
-                                xAxes: [{
-                                    gridLines: {
-                                        drawBorder: true,
-                                        display: false
-                                    }
-                                }]
-                            }
-                        }
-                    }
+                    options={options}
+                    plugins={[tooltipLine]}
                 />
             </div>
         </div>

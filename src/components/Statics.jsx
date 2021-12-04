@@ -14,10 +14,10 @@ function Statics() {
                 <h1>Statics</h1>
                 <div className="boton">
                     <div className="botonDescargaIzq">
-                        <img src={download} />
+                        <img src={download} alt="Botón de descarga" />
                     </div>
                     <div className="botonDescargaDer">
-                        <img src={down_arrow} />
+                        <img src={down_arrow} alt="Flecha de descarga" />
                     </div>
                 </div>
             </div>
